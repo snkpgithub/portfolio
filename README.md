@@ -1,6 +1,6 @@
 # Shashank Pandey — Portfolio
 Click Here:
-https://shashank-pandey-portfolio.vercel.app/(https://shashank-pandey-portfolio.vercel.app)
+shashank-pandey-portfolio.vercel.app(https://shashank-pandey-portfolio.vercel.app)
 
 AI/Data software mindset style portfolio: dark theme, grid background, terminal accents, and scroll animations.
 

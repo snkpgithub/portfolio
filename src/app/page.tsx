@@ -13,7 +13,7 @@ import { Contact } from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main>
+    <main className="min-w-0 overflow-x-hidden">
       <Nav />
       <Hero />
       <Summary />

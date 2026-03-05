@@ -33,7 +33,7 @@ export function Section({
     <section
       id={id}
       ref={ref}
-      className={`relative z-10 max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-14 md:py-20 ${className}`}
+      className={`relative z-10 max-w-4xl mx-auto px-3 sm:px-6 py-10 sm:py-14 md:py-20 w-full max-w-[100vw] box-border ${className}`}
     >
       {label && (
         <p

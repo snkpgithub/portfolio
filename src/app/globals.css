@@ -14,11 +14,23 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 18px;
+  font-size: 15px;
   overflow-x: hidden;
 }
 
+@media (min-width: 400px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 @media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
   html {
     font-size: 19px;
   }
@@ -27,6 +39,8 @@ html {
 body {
   @apply bg-void text-gray-100 antialiased;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   background-image:
     radial-gradient(circle at 1px 1px, rgba(34, 211, 238, 0.06) 1px, transparent 0);
   background-size: 40px 40px;

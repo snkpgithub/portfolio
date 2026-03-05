@@ -50,7 +50,7 @@ export function Nav() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-20 border-b border-border/50 bg-void/80 backdrop-blur-md">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-3 sm:py-5 flex flex-wrap gap-3 sm:gap-5 justify-center md:justify-start">
+      <div className="max-w-4xl mx-auto px-3 sm:px-6 py-3 sm:py-5 flex flex-wrap gap-2 sm:gap-5 justify-center md:justify-start w-full max-w-[100vw] box-border">
         {SECTIONS.map((id) => (
           <a
             key={id}

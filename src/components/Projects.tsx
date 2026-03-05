@@ -58,7 +58,7 @@ export function Projects() {
         {projects.map((p) => (
           <div
             key={p.name}
-            className="border border-border rounded-xl bg-surface/80 p-6 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 transition-all duration-300 group"
+            className="border border-border rounded-xl bg-surface/80 p-6 border-l-4 border-l-transparent hover:border-l-accent/60 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 transition-all duration-300 group"
           >
             <div className="flex flex-wrap items-baseline justify-between gap-3 mb-2">
               <h3 className="text-accent font-semibold text-xl">{p.name}</h3>
@@ -67,7 +67,7 @@ export function Projects() {
                   href={p.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-sm text-muted hover:text-accent transition-colors"
+                  className="font-mono text-sm text-muted hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded"
                 >
                   View on GitHub →
                 </a>

@@ -6,7 +6,7 @@ export function Hero() {
       <div className="flex flex-col md:flex-row md:items-center md:gap-12 gap-6">
         <div className="flex-1 min-w-0">
       <p
-        className="font-mono text-accent text-sm sm:text-base md:text-lg tracking-widest mb-3 sm:mb-5 animate-fade-in opacity-0 animate-glow-pulse"
+        className="font-mono text-accent text-sm sm:text-base md:text-lg tracking-wide sm:tracking-widest break-words overflow-visible mb-3 sm:mb-5 animate-fade-in opacity-0 animate-glow-pulse"
         style={{ animationFillMode: "forwards", animationDelay: "0ms, 700ms" } as React.CSSProperties}
       >
         [ STATUS: ONLINE ] — BUFFER_READY
@@ -87,6 +87,16 @@ export function Hero() {
           </div>
         </div>
       </div>
+      <a
+        href="#summary"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-xs text-muted hover:text-accent transition-colors flex flex-col items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-void rounded"
+        aria-label="Scroll to content"
+      >
+        <span>Scroll</span>
+        <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
     </header>
   );
 }

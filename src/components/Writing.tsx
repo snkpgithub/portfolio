@@ -2,11 +2,11 @@ import { Section } from "./Section";
 
 const posts = [
   {
-    title: "Building production LLM pipelines: lessons from the field",
-    date: "2025",
+    title: "Advanced Time Series Forecasting in Retail and E-commerce: Research-Driven Applications for Walmart, Amazon, and Beyond",
+    date: "July 2025",
     excerpt:
-      "Practical takeaways from designing and deploying LLM fine-tuning and inference systems at scale.",
-    href: "#",
+      "In the ever-evolving landscapes of retail and e-commerce, managing demand volatility, intricate supply chains, and unpredictable customer behavior has become a data-intensive challenge. For global titans like Walmart and Amazon, solving this challenge at scale means embracing advanced time series forecasting techniques rooted in both academic research and operational excellence.",
+    href: "https://medium.com/@snkp.careerwork/advanced-time-series-forecasting-in-retail-and-e-commerce-research-driven-applications-for-87ede87c87f2",
     source: "Medium",
   },
   {
@@ -18,12 +18,12 @@ const posts = [
     source: "Medium",
   },
   {
-    title: "MLOps on a budget: cost-effective model serving and monitoring",
-    date: "2024",
+    title: "RAG Unveiled: How AI is Learning to Think with Real-Time Knowledge",
+    date: "Nov 2024",
     excerpt:
-      "Strategies for scalable model deployment and refresh without blowing the cloud budget.",
-    href: "#",
-    source: "Dev.to",
+      "Imagine asking your smart assistant about yesterday’s football match, and it confidently describes a game from 2022. Frustrating, right? This is where RAG (Retrieval-Augmented Generation) comes in — it’s like giving your AI a real-time sports ticker instead of relying on old memories.",
+    href: "https://medium.com/@snkp.careerwork/rag-unveiled-how-ai-is-learning-to-think-with-real-time-knowledge-b8be2d683200",
+    source: "Medium",
   },
 ];
 

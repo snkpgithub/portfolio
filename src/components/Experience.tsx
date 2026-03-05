@@ -77,12 +77,12 @@ export function Experience() {
         {jobs.map((job, i) => (
           <div
             key={job.company}
-            className="group border border-border rounded-xl bg-surface/80 hover:bg-surface hover:border-accent/30 hover:-translate-y-1 p-7 transition-all duration-300"
+            className="group border border-border rounded-xl bg-surface/80 hover:bg-surface hover:border-accent/30 hover:-translate-y-1 p-7 pl-6 border-l-4 border-l-transparent hover:border-l-accent/60 transition-all duration-300"
           >
             <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
               <div>
-                <span className="font-mono text-sm text-accent">
-                  [{job.tag}]
+                <span className="inline-block font-mono text-xs text-accent bg-accent/10 px-2 py-0.5 rounded mb-1">
+                  {job.tag}
                 </span>
                 <h3 className="text-xl font-semibold text-white mt-1">
                   {job.role}

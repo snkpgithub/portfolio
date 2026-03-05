@@ -37,7 +37,7 @@ export function Section({
     >
       {label && (
         <p
-          className={`font-mono text-sm md:text-base text-muted tracking-widest mb-10 transition-all duration-700 ${
+          className={`font-mono text-sm md:text-base text-muted tracking-widest mb-10 pl-3 border-l-2 border-accent/50 transition-all duration-700 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
           }`}
         >

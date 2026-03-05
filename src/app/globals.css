@@ -58,6 +58,13 @@ body::before {
   z-index: 0;
 }
 
+/* Focus visible for keyboard / a11y */
+a:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--void), 0 0 0 4px var(--accent);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

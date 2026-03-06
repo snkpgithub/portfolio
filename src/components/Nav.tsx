@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 const SECTIONS = [
   "summary",
-  "freelance",
   "experience",
   "volunteering",
+  "freelance",
   "skills",
   "certifications",
   "projects",

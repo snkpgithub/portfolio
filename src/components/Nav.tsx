@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 const SECTIONS = [
   "summary",
+  "freelance",
   "experience",
   "volunteering",
   "skills",
@@ -17,6 +18,7 @@ const SECTIONS = [
 
 const LABELS: Record<(typeof SECTIONS)[number], string> = {
   summary: "Summary",
+  freelance: "Freelance",
   experience: "Experience",
   volunteering: "Volunteering",
   skills: "Skills",

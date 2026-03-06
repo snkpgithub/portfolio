@@ -65,6 +65,38 @@ button:focus-visible {
   box-shadow: 0 0 0 2px var(--void), 0 0 0 4px var(--accent);
 }
 
+/* Print: clean one-pager for PDF */
+@media print {
+  html,
+  body {
+    background: #fff;
+    color: #1a1a1a;
+    font-size: 11pt;
+  }
+  body::before {
+    display: none;
+  }
+  body {
+    background-image: none;
+  }
+  [class*="bg-void"],
+  [class*="bg-surface"] {
+    background-color: #f5f5f5 !important;
+    border-color: #ddd !important;
+  }
+  [class*="text-muted"],
+  [class*="text-gray-400"],
+  [class*="text-gray-500"] {
+    color: #444 !important;
+  }
+  [class*="text-accent"] {
+    color: #0d9488 !important;
+  }
+  a {
+    color: #0d9488;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

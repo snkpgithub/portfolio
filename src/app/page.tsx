@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { MetricsStrip } from "@/components/MetricsStrip";
 import { Nav } from "@/components/Nav";
 import { Summary } from "@/components/Summary";
 import { Experience } from "@/components/Experience";
@@ -17,6 +18,7 @@ export default function Home() {
     <main className="min-w-0 overflow-x-hidden">
       <Nav />
       <Hero />
+      <MetricsStrip />
       <Summary />
       <Experience />
       <Volunteering />

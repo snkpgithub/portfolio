@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Section } from "./Section";
 
 const projects = [
@@ -52,35 +55,79 @@ const projects = [
 ];
 
 export function Projects() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   return (
     <Section id="projects" label="projects">
-      <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((p) => (
-          <div
-            key={p.name}
-            className="border border-border rounded-xl bg-surface/80 p-6 border-l-4 border-l-transparent hover:border-l-accent/60 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 transition-all duration-300 group"
-          >
-            <div className="flex flex-wrap items-baseline justify-between gap-3 mb-2">
-              <h3 className="text-accent font-semibold text-xl">{p.name}</h3>
-              {p.href && (
-                <a
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-mono text-sm text-muted hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded"
+      <div className="space-y-2">
+        {projects.map((p, i) => {
+          const isOpen = openIndex === i;
+          return (
+            <div
+              key={p.name}
+              className="border border-border rounded-xl bg-surface/80 overflow-hidden border-l-4 border-l-transparent hover:border-l-accent/40 transition-all duration-300"
+            >
+              <button
+                type="button"
+                onClick={() => setOpenIndex(isOpen ? null : i)}
+                className="w-full text-left flex flex-wrap items-center justify-between gap-3 p-4 sm:p-5 hover:bg-surface/50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset rounded-xl"
+                aria-expanded={isOpen}
+                aria-controls={`project-content-${i}`}
+                id={`project-toggle-${i}`}
+              >
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-accent font-semibold text-lg sm:text-xl">
+                    {p.name}
+                  </h3>
+                  <p className="font-mono text-sm text-muted mt-0.5">
+                    {p.tag} · {p.period}
+                  </p>
+                </div>
+                <svg
+                  className={`w-5 h-5 text-muted flex-shrink-0 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden
                 >
-                  View on GitHub →
-                </a>
-              )}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id={`project-content-${i}`}
+                role="region"
+                aria-labelledby={`project-toggle-${i}`}
+                className={`grid transition-[grid-template-rows] duration-200 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+              >
+                <div className="overflow-hidden">
+                  <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-0 border-t border-border/60">
+                    <p className="text-gray-400 text-base leading-relaxed mb-3">
+                      {p.desc}
+                    </p>
+                    <p className="font-mono text-sm text-muted mb-3">
+                      {p.stack}
+                    </p>
+                    {p.href && (
+                      <a
+                        href={p.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-sm text-accent hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded"
+                      >
+                        View on GitHub →
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
             </div>
-            <p className="font-mono text-sm text-muted mb-1">{p.tag}</p>
-            <p className="text-gray-500 text-sm mb-2">{p.period}</p>
-            <p className="text-gray-400 text-base leading-relaxed mb-3">
-              {p.desc}
-            </p>
-            <p className="font-mono text-sm text-muted">{p.stack}</p>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </Section>
   );

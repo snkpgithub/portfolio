@@ -23,6 +23,20 @@ export const viewport: Viewport = {
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://shashankpandey.dev";
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Shashank Pandey",
+  jobTitle: "AI/ML Engineer",
+  url: siteUrl,
+  sameAs: [
+    "https://www.linkedin.com/in/snkp0018",
+    "https://github.com/snkpgithub",
+  ],
+  description:
+    "AI/ML Engineer building production LLM fine-tuning platforms, GenAI pipelines, and scalable MLOps infrastructure.",
+};
+
 export const metadata: Metadata = {
   title: "Shashank Pandey | AI/ML Engineer",
   description:
@@ -56,7 +70,13 @@ export default function RootLayout({
       lang="en"
       className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="font-sans relative min-h-screen">{children}</body>
+      <body className="font-sans relative min-h-screen">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

@@ -124,12 +124,12 @@ export function Hero() {
         AI/ML Engineer — Software Developer
       </p>
       <span
-        className="inline-flex items-center gap-1.5 font-mono text-xs text-accent/90 bg-accent/10 border border-accent/30 px-2.5 py-1 rounded-full mb-4 sm:mb-6 animate-fade-in opacity-0"
+        className="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-400 bg-emerald-500/20 border border-emerald-400/50 shadow-[0_0_14px_rgba(52,211,153,0.35)] px-2.5 py-1 rounded-full mb-4 sm:mb-6 animate-fade-in opacity-0"
         style={{ animationDelay: "320ms", animationFillMode: "forwards" }}
       >
         <span className="relative flex h-1.5 w-1.5">
-          <span className="absolute inline-flex h-full w-full rounded-full bg-accent animate-ping opacity-75" />
-          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
+          <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 animate-ping opacity-75" />
+          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
         </span>
         Open to opportunities
       </span>

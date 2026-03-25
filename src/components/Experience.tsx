@@ -17,9 +17,9 @@ const jobs = [
     tag: "PRODUCTION",
   },
   {
-    role: "Machine Learning Researcher – GenAI",
+    role: "ML Engineer – GenAI",
     company: "Jacob's Medicine and Biomedical Sciences",
-    period: "Jan 2025 - Feb 2026",
+    period: "Jan 2025 - Dec 2025",
     location: "Buffalo, USA",
     bullets: [
       "Designed GenAI biomedical systems using LangChain, LangGraph, GPT-4, Claude, and RAG across 15+ research projects, improving data retrieval efficiency by 35%.",
@@ -30,7 +30,7 @@ const jobs = [
     tag: "RESEARCH",
   },
   {
-    role: "Data Scientist - Machine Learning Engineer",
+    role: "ML Engineer – Data Science",
     company: "Baldwin Richardson Foods",
     period: "Aug 2024 - Dec 2024",
     location: "New York, USA",
@@ -56,7 +56,7 @@ const jobs = [
     tag: "PRODUCTION",
   },
   {
-    role: "Data Scientist - Software Engineer Intern",
+    role: "Data Scientist – Software Intern",
     company: "ISRO - Indian Space Research Organisation",
     period: "Sep 2021 - Aug 2022",
     location: "Bangalore, India",

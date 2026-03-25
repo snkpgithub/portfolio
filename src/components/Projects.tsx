@@ -47,7 +47,7 @@ const projects = [
   {
     name: "GenAI Biomedical Pipeline",
     tag: "Research · Jacob's Medicine",
-    period: "Jan 2025 – Feb 2026",
+    period: "Jan 2025 – Dec 2025",
     desc: "LangChain, LangGraph, RAG with GPT-4/Claude across 15+ research projects. Improved data retrieval and experimental efficiency by 35%.",
     stack: "LangChain · LangGraph · RAG · Azure ML",
     href: null,

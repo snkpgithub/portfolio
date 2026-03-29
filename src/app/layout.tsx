@@ -34,18 +34,18 @@ const personSchema = {
     "https://github.com/snkpgithub",
   ],
   description:
-    "AI/ML Engineer building production LLM fine-tuning platforms, GenAI pipelines, and scalable MLOps infrastructure.",
+    "AI/ML engineer: production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
 };
 
 export const metadata: Metadata = {
   title: "Shashank Pandey | AI/ML Engineer",
   description:
-    "AI/ML Engineer building production LLM fine-tuning platforms, GenAI pipelines, and scalable MLOps infrastructure.",
+    "AI/ML engineer: production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
   metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Shashank Pandey | AI/ML Engineer",
     description:
-      "AI/ML Engineer building production LLM fine-tuning platforms, GenAI pipelines, and scalable MLOps infrastructure.",
+      "AI/ML engineer: production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
     url: siteUrl,
     siteName: "Shashank Pandey",
     type: "website",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shashank Pandey | AI/ML Engineer",
     description:
-      "AI/ML Engineer building production LLM fine-tuning platforms, GenAI pipelines, and scalable MLOps infrastructure.",
+      "AI/ML engineer: production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
     images: ["/og.png"],
   },
 };

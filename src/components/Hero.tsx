@@ -43,13 +43,13 @@ export function Hero() {
   }, [terminalOpen]);
 
   return (
-    <header className="relative z-10 min-h-[85vh] flex flex-col justify-center max-w-4xl mx-auto px-3 sm:px-6 pt-20 sm:pt-24 pb-10 sm:pb-16 w-full max-w-[100vw] box-border">
+    <header className="relative z-10 min-h-[85vh] flex flex-col justify-start md:justify-center max-w-4xl mx-auto px-3 sm:px-6 pt-[max(11rem,env(safe-area-inset-top)+9.5rem)] sm:pt-40 md:pt-28 lg:pt-24 pb-10 sm:pb-16 w-full max-w-[100vw] box-border">
       <div className="flex flex-col md:flex-row md:items-center md:gap-12 gap-6">
         <div className="flex-1 min-w-0">
       <button
         type="button"
         onClick={() => setTerminalOpen(true)}
-        className="font-mono text-accent text-sm sm:text-base md:text-lg tracking-wide sm:tracking-widest break-words overflow-visible mb-3 sm:mb-5 animate-fade-in opacity-0 animate-glow-pulse cursor-pointer bg-transparent border-0 p-0 text-left hover:opacity-90 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-void rounded"
+        className="font-mono text-accent/90 text-sm sm:text-base md:text-lg tracking-wide sm:tracking-widest break-words overflow-visible pt-2 sm:pt-6 md:pt-8 mb-3 sm:mb-5 animate-fade-in opacity-0 cursor-pointer bg-transparent border-0 px-0 pb-0 text-left hover:text-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-void rounded"
         style={{ animationFillMode: "forwards", animationDelay: "0ms, 700ms" } as React.CSSProperties}
         aria-label="Open terminal easter egg"
         title="Training run 42% complete · Click for terminal"
@@ -112,33 +112,57 @@ export function Hero() {
         </div>
       )}
       <h1
-        className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-3 sm:mb-4 animate-fade-in opacity-0 bg-gradient-to-r from-accent via-cyan-400 to-accent bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(34,211,238,0.25)]"
+        className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-3 sm:mb-4 animate-fade-in opacity-0 bg-gradient-to-r from-accent via-cyan-400 to-accent bg-clip-text text-transparent drop-shadow-[0_0_14px_rgba(34,211,238,0.12)]"
         style={{ animationDelay: "150ms", animationFillMode: "forwards" }}
       >
         Shashank Pandey
       </h1>
       <p
-        className="text-lg sm:text-xl md:text-3xl text-muted mb-3 sm:mb-4 animate-fade-in opacity-0"
+        className="text-lg sm:text-xl md:text-3xl text-gray-300 mb-3 sm:mb-4 animate-fade-in opacity-0 font-medium"
         style={{ animationDelay: "300ms", animationFillMode: "forwards" }}
       >
-        AI/ML Engineer — Software Developer
+        AI/ML engineer shipping production models, platforms, and APIs
       </p>
       <span
-        className="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-400 bg-emerald-500/20 border border-emerald-400/50 shadow-[0_0_14px_rgba(52,211,153,0.35)] px-2.5 py-1 rounded-full mb-4 sm:mb-6 animate-fade-in opacity-0"
+        className="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-400/95 bg-emerald-500/15 border border-emerald-400/40 px-2.5 py-1 rounded-md mb-5 sm:mb-6 animate-fade-in opacity-0"
         style={{ animationDelay: "320ms", animationFillMode: "forwards" }}
       >
-        <span className="relative flex h-1.5 w-1.5">
-          <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 animate-ping opacity-75" />
-          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
-        </span>
+        <span className="relative flex h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden />
         Open to opportunities
       </span>
-      <p
-        className="text-gray-400 text-sm sm:text-base md:text-xl max-w-xl mb-8 sm:mb-10 animate-fade-in opacity-0"
+      <ul
+        className="text-gray-400 text-sm sm:text-base md:text-lg max-w-xl mb-8 sm:mb-10 space-y-2.5 animate-fade-in opacity-0 list-none pl-0"
         style={{ animationDelay: "450ms", animationFillMode: "forwards" }}
       >
-        Production AI/ML systems · LLM fine-tuning · GenAI pipelines · MLOps
-      </p>
+        <li className="flex gap-2.5">
+          <span className="font-mono text-accent flex-shrink-0">▸</span>
+          <span>
+            Multi-cloud LLM fine-tuning platform; reported{" "}
+            <strong className="text-gray-300 font-medium">~40% GPU cost</strong> reduction
+            and <strong className="text-gray-300 font-medium">~35% inference</strong>{" "}
+            footprint improvement in production-facing work.
+          </span>
+        </li>
+        <li className="flex gap-2.5">
+          <span className="font-mono text-accent flex-shrink-0">▸</span>
+          <span>
+            GenAI + RAG across <strong className="text-gray-300 font-medium">15+</strong>{" "}
+            biomedical projects; strong focus on retrieval, evals, and model compression
+            (e.g. <strong className="text-gray-300 font-medium">~45% latency</strong>{" "}
+            reduction with quality held).
+          </span>
+        </li>
+        <li className="flex gap-2.5">
+          <span className="font-mono text-accent flex-shrink-0">▸</span>
+          <span>
+            MLOps and serving: CI/CD, microservices, monitoring—NLP at{" "}
+            <strong className="text-gray-300 font-medium">50K+</strong> tickets,
+            forecasting pipelines tied to{" "}
+            <strong className="text-gray-300 font-medium">seven-figure</strong> savings
+            signals.
+          </span>
+        </li>
+      </ul>
       <div
         className="flex flex-wrap gap-5 items-center animate-fade-in opacity-0"
         style={{ animationDelay: "600ms", animationFillMode: "forwards" }}

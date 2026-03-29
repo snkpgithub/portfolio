@@ -3,7 +3,19 @@
 import { useState } from "react";
 import { Section } from "./Section";
 
-const projects = [
+type Project = {
+  name: string;
+  tag: string;
+  period: string;
+  desc: string;
+  stack: string;
+  href: string | null;
+  problem?: string;
+  architecture?: string;
+  outcome?: string;
+};
+
+const projects: Project[] = [
   {
     name: "FullStock.ai",
     tag: "Universal Stock Tracker",
@@ -11,6 +23,12 @@ const projects = [
     desc: "Streamlit web app to track any stock with live prices, candlestick charts, financial metrics, and AI-powered analysis via Groq Llama-3.3-70B. Real-time chat with AI about stocks—blending finance, visualization, and AI agents.",
     stack: "Python · Streamlit · Generative AI · Groq · Llama-3.3-70B",
     href: "https://github.com/snkpgithub/fullstock-ai",
+    problem:
+      "Investors need a single place for quotes, charts, and narrative context without standing up heavy infra.",
+    architecture:
+      "Streamlit UI, Groq-hosted Llama-3.3-70B for analysis, live market data and charting in one flow.",
+    outcome:
+      "End-to-end demo combining visualization, retrieval-style prompting, and conversational analysis.",
   },
   {
     name: "ChurnMaster AI",
@@ -19,6 +37,12 @@ const projects = [
     desc: "Customer churn prediction system for telecom using Neural Network (81% accuracy), XGBoost, and LightGBM. Feature analysis and customer segmentation for data-driven retention strategies.",
     stack: "Python · TensorFlow · scikit-learn · XGBoost · LightGBM",
     href: "https://github.com/snkpgithub/ChurnMaster_AI",
+    problem:
+      "Retention teams need ranked churn risk and interpretable drivers, not a single black-box score.",
+    architecture:
+      "Compared NN, XGBoost, and LightGBM; feature importance and segmentation for planning.",
+    outcome:
+      "81% accuracy on the primary NN model with comparative baselines for stakeholder trust.",
   },
   {
     name: "YouTube Trending Analytics",
@@ -43,6 +67,12 @@ const projects = [
     desc: "Full-stack multi-cloud platform for LLM fine-tuning with RESTful APIs and microservices across AWS, Azure, GCP. Intelligent compute orchestration reduced GPU training costs by 40%.",
     stack: "Python · FastAPI · AWS/Azure/GCP · GPU orchestration",
     href: null,
+    problem:
+      "Organizations need repeatable fine-tuning workflows across clouds without runaway GPU spend or ad-hoc scripts.",
+    architecture:
+      "Microservices and REST APIs; orchestrated training and reporting across AWS, Azure, and GCP.",
+    outcome:
+      "Reported ~40% reduction in GPU training cost; production use at Synergetics AI.",
   },
   {
     name: "GenAI Biomedical Pipeline",
@@ -51,8 +81,31 @@ const projects = [
     desc: "LangChain, LangGraph, RAG with GPT-4/Claude across 15+ research projects. Improved data retrieval and experimental efficiency by 35%.",
     stack: "LangChain · LangGraph · RAG · Azure ML",
     href: null,
+    problem:
+      "Research groups needed grounded retrieval and agentic workflows over diverse biomedical corpora.",
+    architecture:
+      "LangChain and LangGraph orchestration, RAG with GPT-4 and Claude, FAISS and transformer stacks on Azure ML.",
+    outcome:
+      "~35% retrieval efficiency gains; ~28% semantic search accuracy; ~45% inference latency reduction via distillation/pruning with quality held.",
   },
 ];
+
+function SpecBlock({
+  label,
+  children,
+}: {
+  label: string;
+  children: string;
+}) {
+  return (
+    <div className="mb-3 last:mb-0">
+      <p className="font-mono text-[10px] sm:text-xs text-accent uppercase tracking-wider mb-1">
+        {label}
+      </p>
+      <p className="text-gray-400 text-sm leading-relaxed">{children}</p>
+    </div>
+  );
+}
 
 export function Projects() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -62,6 +115,7 @@ export function Projects() {
       <div className="space-y-2">
         {projects.map((p, i) => {
           const isOpen = openIndex === i;
+          const hasSpec = Boolean(p.problem || p.architecture || p.outcome);
           return (
             <div
               key={p.name}
@@ -106,6 +160,15 @@ export function Projects() {
               >
                 <div className="overflow-hidden">
                   <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-0 border-t border-border/60">
+                    {hasSpec && (
+                      <div className="mb-4 p-3 sm:p-4 rounded-lg bg-void/50 border border-border/80">
+                        {p.problem && <SpecBlock label="Problem / ask">{p.problem}</SpecBlock>}
+                        {p.architecture && (
+                          <SpecBlock label="Architecture">{p.architecture}</SpecBlock>
+                        )}
+                        {p.outcome && <SpecBlock label="Outcome">{p.outcome}</SpecBlock>}
+                      </div>
+                    )}
                     <p className="text-gray-400 text-base leading-relaxed mb-3">
                       {p.desc}
                     </p>

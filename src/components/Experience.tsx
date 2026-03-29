@@ -6,6 +6,8 @@ const jobs = [
     company: "Synergetics AI",
     period: "Dec 2025 - Present",
     location: "Remote, USA",
+    scope:
+      "Production LLM platform, multi-cloud GPU orchestration, APIs and full-stack delivery.",
     bullets: [
       "Architected LangTrain, a full-stack multi-cloud LLM fine-tuning platform with RESTful APIs and microservices across AWS, Azure, and GCP, reducing GPU training costs by 40%.",
       "Engineered scalable data and reporting applications using Python, FastAPI, and Superset with sub-second latency for executive and operational reporting.",
@@ -21,6 +23,8 @@ const jobs = [
     company: "Jacob's Medicine and Biomedical Sciences",
     period: "Jan 2025 - Dec 2025",
     location: "Buffalo, USA",
+    scope:
+      "GenAI systems for research: RAG, LangGraph, Azure ML, compression and latency work.",
     bullets: [
       "Designed GenAI biomedical systems using LangChain, LangGraph, GPT-4, Claude, and RAG across 15+ research projects, improving data retrieval efficiency by 35%.",
       "Deployed NLP systems with BERT, T5, and FAISS; developed feature engineering and data augmentation pipelines that improved semantic search accuracy by 28%.",
@@ -34,6 +38,8 @@ const jobs = [
     company: "Baldwin Richardson Foods",
     period: "Aug 2024 - Dec 2024",
     location: "New York, USA",
+    scope:
+      "Forecasting and anomaly detection at scale; MLOps on AWS and Databricks.",
     bullets: [
       "Delivered anomaly detection and time-series forecasting models using XGBoost, LSTM, and Prophet on 14+ years of sales data, improving prediction accuracy by 30% and enabling $1.5M in annual cost savings.",
       "Automated feature engineering and model evaluation pipelines on AWS SageMaker and Databricks with experiment tracking for faster model iteration.",
@@ -47,6 +53,8 @@ const jobs = [
     company: "KPIT Technologies",
     period: "Jun 2021 - Jul 2023",
     location: "India (Remote)",
+    scope:
+      "Production NLP over high-volume tickets; IoT analytics; TensorFlow Serving and MLOps.",
     bullets: [
       "Deployed production NLP pipelines for text classification, entity extraction, and incident categorization across 50K+ tickets using BERT and PyTorch, achieving 0.88 precision and 0.85 recall and reducing manual review time by 60%.",
       "Implemented anomaly detection and feature-engineering frameworks on large-scale automotive IoT datasets using PySpark and AWS SageMaker, enabling earlier detection of equipment failures.",
@@ -60,6 +68,8 @@ const jobs = [
     company: "ISRO - Indian Space Research Organisation",
     period: "Sep 2021 - Aug 2022",
     location: "Bangalore, India",
+    scope:
+      "Spectral DL and peak detection for space-like conditions; distributed Spark; mission reliability.",
     bullets: [
       "Developed deep learning classifiers and automated peak-finding algorithms on satellite telemetry and laser-induced plasma spectra using PyTorch, improving anomaly detection accuracy by 32% (IEEE Conference 2022).",
       "Deployed real-time model serving and early-warning analytics for signal degradation detection, achieving 99.9% system reliability on mission-critical infrastructure.",
@@ -88,6 +98,9 @@ export function Experience() {
                   {job.role}
                 </h3>
                 <p className="text-accent font-medium text-lg">{job.company}</p>
+                <p className="text-gray-500 text-sm mt-2 leading-snug max-w-xl">
+                  {job.scope}
+                </p>
               </div>
               <p className="font-mono text-sm text-muted">
                 {job.period}

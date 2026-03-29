@@ -1,41 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-const SECTIONS = [
-  "summary",
-  "experience",
-  "volunteering",
-  "freelance",
-  "skills",
-  "certifications",
-  "projects",
-  "education",
-  "publications",
-  "writing",
-  "contact",
-] as const;
-
-const LABELS: Record<(typeof SECTIONS)[number], string> = {
-  summary: "Summary",
-  freelance: "Freelance",
-  experience: "Experience",
-  volunteering: "Volunteering",
-  skills: "Skills",
-  certifications: "Certifications",
-  projects: "Projects",
-  education: "Education",
-  publications: "Publications",
-  writing: "Writing",
-  contact: "Contact",
-};
+import { NAV_LABELS, NAV_SECTIONS } from "@/lib/sections";
 
 export function Nav() {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
-    SECTIONS.forEach((id) => {
+    NAV_SECTIONS.forEach((id) => {
       const el = document.getElementById(id);
       if (!el) return;
       const observer = new IntersectionObserver(
@@ -53,7 +26,7 @@ export function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-20 border-b border-border/50 bg-void/80 backdrop-blur-md print:hidden">
       <div className="max-w-4xl mx-auto px-3 sm:px-6 py-3 sm:py-5 flex flex-wrap gap-2 sm:gap-5 justify-center md:justify-start w-full max-w-[100vw] box-border">
-        {SECTIONS.map((id) => (
+        {NAV_SECTIONS.map((id) => (
           <a
             key={id}
             href={`#${id}`}
@@ -61,7 +34,7 @@ export function Nav() {
               activeId === id ? "text-accent border-accent" : "text-muted"
             }`}
           >
-            {LABELS[id]}
+            {NAV_LABELS[id]}
           </a>
         ))}
       </div>

@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { NAV_LABELS, NAV_SECTIONS } from "@/lib/sections";
+import { NAV_LABELS, NavSectionId } from "@/lib/sections";
+
+const NAV_SECTIONS: NavSectionId[] = ["summary", "projects", "experience", "writing", "contact"];
 
 export function Nav() {
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -34,7 +36,7 @@ export function Nav() {
               activeId === id ? "text-accent border-accent" : "text-muted"
             }`}
           >
-            {NAV_LABELS[id]}
+            {id === "summary" ? "About" : NAV_LABELS[id]}
           </a>
         ))}
       </div>

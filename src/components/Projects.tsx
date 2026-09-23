@@ -13,6 +13,8 @@ type Project = {
   problem?: string;
   architecture?: string;
   outcome?: string;
+  contribution?: string;
+  flow?: string[];
 };
 
 const projects: Project[] = [
@@ -62,6 +64,8 @@ const projects: Project[] = [
   },
   {
     name: "LangTrain",
+    contribution: "Architected the platform, REST APIs, and microservices for multi-cloud LLM fine-tuning.",
+    flow: ["REST APIs", "Training orchestration", "AWS · Azure · GCP"],
     tag: "Multi-cloud LLM platform",
     period: "Synergetics AI",
     desc: "Full-stack multi-cloud platform for LLM fine-tuning with RESTful APIs and microservices across AWS, Azure, GCP. Intelligent compute orchestration reduced GPU training costs by 40%.",
@@ -76,6 +80,8 @@ const projects: Project[] = [
   },
   {
     name: "GenAI Biomedical Pipeline",
+    contribution: "Designed biomedical GenAI systems and deployed retrieval and ML pipelines across 15+ research projects.",
+    flow: ["Biomedical corpora", "FAISS retrieval", "LangGraph · GPT-4 / Claude"],
     tag: "Research · Jacob's Medicine",
     period: "Jan 2025 – Dec 2025",
     desc: "LangChain, LangGraph, RAG with GPT-4/Claude across 15+ research projects. Improved data retrieval and experimental efficiency by 35%.",
@@ -86,7 +92,7 @@ const projects: Project[] = [
     architecture:
       "LangChain and LangGraph orchestration, RAG with GPT-4 and Claude, FAISS and transformer stacks on Azure ML.",
     outcome:
-      "~35% retrieval efficiency gains; ~28% semantic search accuracy; ~45% inference latency reduction via distillation/pruning with quality held.",
+      "~35% retrieval efficiency gains; ~28% improvement in semantic search accuracy; ~45% inference latency reduction via distillation/pruning with quality held.",
   },
 ];
 
@@ -111,9 +117,41 @@ export function Projects() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <Section id="projects" label="projects">
+    <Section id="projects" label="selected work">
+      <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-3">AI systems I’ve built</h2>
+      <p className="text-gray-400 leading-relaxed mb-8">A closer look at platform engineering and applied research.</p>
+      <div className="grid gap-6 mb-10">
+        {projects.filter((p) => p.contribution).map((p) => (
+          <article key={p.name} className="rounded-xl border border-accent/30 bg-surface/80 p-5 sm:p-8">
+            <p className="text-xs font-mono text-muted mb-2">{p.tag} · {p.period}</p>
+            <h3 className="text-2xl font-semibold text-white mb-6">{p.name}</h3>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div>
+                <SpecBlock label="Problem">{p.problem!}</SpecBlock>
+                <SpecBlock label="My contribution">{p.contribution!}</SpecBlock>
+              </div>
+              <div>
+                <SpecBlock label="Architecture">{p.architecture!}</SpecBlock>
+                <SpecBlock label="Reported results">{p.outcome!}</SpecBlock>
+              </div>
+            </div>
+            <figure className="my-6">
+              <figcaption className="font-mono text-xs text-muted mb-3">System overview · simplified</figcaption>
+              <ol className="flex flex-col sm:flex-row gap-3" aria-label={`${p.name} system overview`}>
+                {p.flow!.map((step, index) => (
+                  <li key={step} className="flex-1 rounded-lg border border-border bg-void/50 p-3 text-sm text-gray-300">
+                    <span className="text-accent font-mono mr-2">0{index + 1}</span>{step}
+                  </li>
+                ))}
+              </ol>
+            </figure>
+            <p className="font-mono text-xs sm:text-sm text-muted">{p.stack}</p>
+          </article>
+        ))}
+      </div>
+      <h3 className="text-xl font-semibold text-white mb-4">More projects</h3>
       <div className="space-y-2">
-        {projects.map((p, i) => {
+        {projects.filter((p) => !p.contribution).map((p, i) => {
           const isOpen = openIndex === i;
           const hasSpec = Boolean(p.problem || p.architecture || p.outcome);
           return (
@@ -156,7 +194,7 @@ export function Projects() {
                 id={`project-content-${i}`}
                 role="region"
                 aria-labelledby={`project-toggle-${i}`}
-                className={`grid transition-[grid-template-rows] duration-200 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+                hidden={!isOpen}
               >
                 <div className="overflow-hidden">
                   <div className="px-4 sm:px-5 pb-4 sm:pb-5 pt-0 border-t border-border/60">
@@ -169,9 +207,9 @@ export function Projects() {
                         {p.outcome && <SpecBlock label="Outcome">{p.outcome}</SpecBlock>}
                       </div>
                     )}
-                    <p className="text-gray-400 text-base leading-relaxed mb-3">
+                    {!hasSpec && <p className="text-gray-400 text-base leading-relaxed mb-3">
                       {p.desc}
-                    </p>
+                    </p>}
                     <p className="font-mono text-sm text-muted mb-3">
                       {p.stack}
                     </p>

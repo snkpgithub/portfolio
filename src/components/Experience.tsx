@@ -5,7 +5,7 @@ const jobs = [
     role: "Lead AI Engineer",
     company: "T-Mobile (via Techsico)",
     period: "May 2026 - Present",
-    location: "",
+    location: "Remote — Seattle, WA office",
     scope: "",
     bullets: [],
     tag: "CURRENT",

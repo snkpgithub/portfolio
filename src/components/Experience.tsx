@@ -2,9 +2,18 @@ import { Section } from "./Section";
 
 const jobs = [
   {
+    role: "Lead AI Engineer",
+    company: "T-Mobile (via Techsico)",
+    period: "May 2026 - Present",
+    location: "Remote — Seattle, WA office",
+    scope: "",
+    bullets: [],
+    tag: "CURRENT",
+  },
+  {
     role: "AI/ML Engineer – Software Developer",
     company: "Synergetics AI",
-    period: "Dec 2025 - Present",
+    period: "Dec 2025 - May 2026",
     location: "Remote, USA",
     scope:
       "Production LLM platform, multi-cloud GPU orchestration, APIs and full-stack delivery.",
@@ -98,21 +107,21 @@ export function Experience() {
                   {job.role}
                 </h3>
                 <p className="text-accent font-medium text-lg">{job.company}</p>
-                <p className="text-gray-500 text-sm mt-2 leading-snug max-w-xl">
+                {job.scope && <p className="text-gray-500 text-sm mt-2 leading-snug max-w-xl">
                   {job.scope}
-                </p>
+                </p>}
               </div>
               <p className="font-mono text-sm text-muted">
                 {job.period}
-                <br />
-                <span className="text-gray-500">{job.location}</span>
+                {job.location && <><br />
+                <span className="text-gray-500">{job.location}</span></>}
               </p>
             </div>
-            <ul className="space-y-2.5 text-gray-400 text-base leading-relaxed list-disc list-inside">
+            {job.bullets.length > 0 && <ul className="space-y-2.5 text-gray-400 text-base leading-relaxed list-disc list-inside">
               {job.bullets.map((b, j) => (
                 <li key={j}>{b}</li>
               ))}
-            </ul>
+            </ul>}
           </div>
         ))}
       </div>

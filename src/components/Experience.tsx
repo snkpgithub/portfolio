@@ -3,7 +3,7 @@ import { Section } from "./Section";
 const jobs = [
   {
     role: "Lead AI Engineer",
-    company: "T-Mobile (via Techsico)",
+    company: "T-Mobile",
     period: "May 2026 - Present",
     location: "Remote — Seattle, WA office",
     scope: "Enterprise AI agents and telecommunications data integration on Azure, with a focus on inference efficiency and application observability.",

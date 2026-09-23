@@ -3,7 +3,7 @@ import { Section } from "./Section";
 const jobs = [
   {
     role: "Lead AI Engineer",
-    company: "T-Mobile (via Techsico)",
+    company: "T-Mobile",
     period: "May 2026 - Present",
     location: "Remote — Seattle, WA office",
     scope: "Enterprise AI agents and telecommunications data integration on Azure, with a focus on inference efficiency and application observability.",
@@ -13,6 +13,7 @@ const jobs = [
       "Developed 5 Model Context Protocol (MCP) servers and integrated 10 APIs to connect AI agents with enterprise tools and telecommunications data sources.",
     ],
     tag: "CURRENT",
+    featured: true,
   },
   {
     role: "AI/ML Engineer – Software Developer",
@@ -100,25 +101,29 @@ export function Experience() {
         {jobs.map((job, i) => (
           <div
             key={job.company}
-            className="group border border-border rounded-xl bg-surface/80 hover:bg-surface hover:border-accent/30 hover:-translate-y-1 p-7 pl-6 border-l-4 border-l-transparent hover:border-l-accent/60 transition-all duration-300"
+            className={`group border rounded-xl hover:-translate-y-1 p-5 sm:p-7 sm:pl-6 border-l-4 transition-all duration-300 ${
+              job.featured
+                ? "border-[#e20074]/40 border-l-[#e20074] bg-[#e20074]/[0.06] hover:border-[#e20074]/70 hover:border-l-[#e20074]"
+                : "border-border bg-surface/80 hover:bg-surface hover:border-accent/30 border-l-transparent hover:border-l-accent/60"
+            }`}
           >
             <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
               <div>
-                <span className="inline-block font-mono text-xs text-accent bg-accent/10 px-2 py-0.5 rounded mb-1">
+                <span className={`inline-block font-mono text-xs px-2 py-1 rounded mb-1 ${job.featured ? "text-white bg-[#e20074]" : "text-accent bg-accent/10"}`}>
                   {job.tag}
                 </span>
                 <h3 className="text-xl font-semibold text-white mt-1">
                   {job.role}
                 </h3>
-                <p className="text-accent font-medium text-lg">{job.company}</p>
-                {job.scope && <p className="text-gray-500 text-sm mt-2 leading-snug max-w-xl">
+                <p className={`font-semibold ${job.featured ? "text-2xl text-[#e20074]" : "text-lg text-accent"}`}>{job.company}</p>
+                {job.scope && <p className="text-gray-400 text-sm mt-2 leading-snug max-w-xl">
                   {job.scope}
                 </p>}
               </div>
               <p className="font-mono text-sm text-muted">
                 {job.period}
                 {job.location && <><br />
-                <span className="text-gray-500">{job.location}</span></>}
+                <span className="text-muted">{job.location}</span></>}
               </p>
             </div>
             {job.bullets.length > 0 && <ul className="space-y-2.5 text-gray-400 text-base leading-relaxed list-disc list-inside">

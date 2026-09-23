@@ -27,25 +27,25 @@ const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Shashank Pandey",
-  jobTitle: "AI/ML Engineer",
+  jobTitle: "Lead AI Engineer",
   url: siteUrl,
   sameAs: [
     "https://www.linkedin.com/in/snkp0018",
     "https://github.com/snkpgithub",
   ],
   description:
-    "AI/ML engineer: production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
+    "Lead AI Engineer at T-Mobile (via Techsico). Experience in production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
 };
 
 export const metadata: Metadata = {
-  title: "Shashank Pandey | AI/ML Engineer",
+  title: "Shashank Pandey | Lead AI Engineer",
   description:
-    "AI/ML engineer: production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
+    "Lead AI Engineer at T-Mobile (via Techsico). Experience in production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
   metadataBase: new URL(siteUrl),
   openGraph: {
-    title: "Shashank Pandey | AI/ML Engineer",
+    title: "Shashank Pandey | Lead AI Engineer",
     description:
-      "AI/ML engineer: production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
+      "Lead AI Engineer at T-Mobile (via Techsico). Experience in production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
     url: siteUrl,
     siteName: "Shashank Pandey",
     type: "website",
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shashank Pandey | AI/ML Engineer",
+    title: "Shashank Pandey | Lead AI Engineer",
     description:
-      "AI/ML engineer: production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
+      "Lead AI Engineer at T-Mobile (via Techsico). Experience in production LLM fine-tuning platforms, GenAI and RAG, multi-cloud MLOps, APIs and evaluation-focused delivery.",
     images: ["/og.png"],
   },
 };

@@ -121,7 +121,7 @@ export function Hero() {
         className="text-lg sm:text-xl md:text-3xl text-gray-300 mb-3 sm:mb-4 animate-fade-in opacity-0 font-medium"
         style={{ animationDelay: "300ms", animationFillMode: "forwards" }}
       >
-        AI/ML engineer shipping production models, platforms, and APIs
+        Lead AI Engineer at T-Mobile (via Techsico)
       </p>
       <span
         className="inline-flex items-center gap-1.5 font-mono text-xs text-emerald-400/95 bg-emerald-500/15 border border-emerald-400/40 px-2.5 py-1 rounded-md mb-5 sm:mb-6 animate-fade-in opacity-0"

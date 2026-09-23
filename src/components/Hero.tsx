@@ -43,7 +43,7 @@ export function Hero() {
   }, [terminalOpen]);
 
   return (
-    <header className="relative z-10 min-h-[85vh] flex flex-col justify-start md:justify-center max-w-4xl mx-auto px-3 sm:px-6 pt-[max(11rem,env(safe-area-inset-top)+9.5rem)] sm:pt-40 md:pt-28 lg:pt-24 pb-10 sm:pb-16 w-full max-w-[100vw] box-border">
+    <header className="relative z-10 min-h-[85vh] flex flex-col justify-start md:justify-center max-w-4xl mx-auto px-3 sm:px-6 pt-28 sm:pt-32 md:pt-28 lg:pt-24 pb-10 sm:pb-16 w-full max-w-[100vw] box-border">
       <div className="flex flex-col md:flex-row md:items-center md:gap-12 gap-6">
         <div className="flex-1 min-w-0">
       <button
@@ -128,41 +128,18 @@ export function Hero() {
         style={{ animationDelay: "320ms", animationFillMode: "forwards" }}
       >
         <span className="relative flex h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden />
-        Open to opportunities
+        Let’s connect
       </span>
-      <ul
-        className="text-gray-400 text-sm sm:text-base md:text-lg max-w-xl mb-8 sm:mb-10 space-y-2.5 animate-fade-in opacity-0 list-none pl-0"
-        style={{ animationDelay: "450ms", animationFillMode: "forwards" }}
+      <p className="text-gray-400 text-base sm:text-lg max-w-xl mb-6 leading-relaxed">
+        I build production AI systems, from LLM fine-tuning and retrieval to
+        cloud infrastructure and reliable APIs.
+      </p>
+      <a
+        href="#projects"
+        className="inline-flex items-center min-h-[44px] text-accent font-medium mb-6 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
       >
-        <li className="flex gap-2.5">
-          <span className="font-mono text-accent flex-shrink-0">▸</span>
-          <span>
-            Multi-cloud LLM fine-tuning platform; reported{" "}
-            <strong className="text-gray-300 font-medium">~40% GPU cost</strong> reduction
-            and <strong className="text-gray-300 font-medium">~35% inference</strong>{" "}
-            footprint improvement in production-facing work.
-          </span>
-        </li>
-        <li className="flex gap-2.5">
-          <span className="font-mono text-accent flex-shrink-0">▸</span>
-          <span>
-            GenAI + RAG across <strong className="text-gray-300 font-medium">15+</strong>{" "}
-            biomedical projects; strong focus on retrieval, evals, and model compression
-            (e.g. <strong className="text-gray-300 font-medium">~45% latency</strong>{" "}
-            reduction with quality held).
-          </span>
-        </li>
-        <li className="flex gap-2.5">
-          <span className="font-mono text-accent flex-shrink-0">▸</span>
-          <span>
-            MLOps and serving: CI/CD, microservices, monitoring—NLP at{" "}
-            <strong className="text-gray-300 font-medium">50K+</strong> tickets,
-            forecasting pipelines tied to{" "}
-            <strong className="text-gray-300 font-medium">seven-figure</strong> savings
-            signals.
-          </span>
-        </li>
-      </ul>
+        Explore selected work →
+      </a>
       <div
         className="flex flex-wrap gap-5 items-center animate-fade-in opacity-0"
         style={{ animationDelay: "600ms", animationFillMode: "forwards" }}

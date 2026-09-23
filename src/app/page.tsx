@@ -2,7 +2,6 @@ import { Hero } from "@/components/Hero";
 import { MetricsStrip } from "@/components/MetricsStrip";
 import { Nav } from "@/components/Nav";
 import { Summary } from "@/components/Summary";
-import { Approach } from "@/components/Approach";
 import { Experience } from "@/components/Experience";
 import { Freelance } from "@/components/Freelance";
 import { Volunteering } from "@/components/Volunteering";
@@ -22,13 +21,12 @@ export default function Home() {
       <Hero />
       <MetricsStrip />
       <Summary />
-      <Approach />
+      <Projects />
       <Experience />
       <Volunteering />
       <Freelance />
       <Skills />
       <Certifications />
-      <Projects />
       <Education />
       <Publications />
       <Writing />

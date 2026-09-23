@@ -6,8 +6,12 @@ const jobs = [
     company: "T-Mobile (via Techsico)",
     period: "May 2026 - Present",
     location: "Remote — Seattle, WA office",
-    scope: "",
-    bullets: [],
+    scope: "Enterprise AI agents and telecommunications data integration on Azure, with a focus on inference efficiency and application observability.",
+    bullets: [
+      "Optimized LLM prompts and agent workflows, reducing token consumption by 25% and inference costs by 20% while improving GPU and provisioned throughput unit (PTU) utilization.",
+      "Managed Azure Cosmos DB and Azure ML infrastructure, reducing query latency by 40%; used Azure Application Insights to monitor application performance and failures.",
+      "Developed 5 Model Context Protocol (MCP) servers and integrated 10 APIs to connect AI agents with enterprise tools and telecommunications data sources.",
+    ],
     tag: "CURRENT",
   },
   {
@@ -118,10 +122,18 @@ export function Experience() {
               </p>
             </div>
             {job.bullets.length > 0 && <ul className="space-y-2.5 text-gray-400 text-base leading-relaxed list-disc list-inside">
-              {job.bullets.map((b, j) => (
+              {job.bullets.slice(0, 3).map((b, j) => (
                 <li key={j}>{b}</li>
               ))}
             </ul>}
+            {job.bullets.length > 3 && (
+              <details className="mt-4 text-gray-400">
+                <summary className="cursor-pointer text-accent text-sm py-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">More about this role</summary>
+                <ul className="mt-3 space-y-2.5 text-base leading-relaxed list-disc list-inside">
+                  {job.bullets.slice(3).map((bullet) => <li key={bullet}>{bullet}</li>)}
+                </ul>
+              </details>
+            )}
           </div>
         ))}
       </div>

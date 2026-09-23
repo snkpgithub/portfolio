@@ -5,10 +5,10 @@ export function Contact() {
     <footer className="relative z-10 border-t border-border mt-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-14">
         <p className="font-mono text-sm text-muted tracking-widest mb-2">
-          // contact
+          {"// contact"}
         </p>
         <p className="text-gray-300 text-lg mb-6">
-          Open to opportunities — let&apos;s connect.
+          Let&apos;s connect about AI systems, engineering, and collaboration.
         </p>
         <div className="flex flex-wrap gap-4 sm:gap-6 text-gray-400 text-base md:text-lg items-center">
           <a

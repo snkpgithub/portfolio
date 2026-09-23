@@ -2,6 +2,10 @@ import { Section } from "./Section";
 
 const groups = [
   {
+    title: "Telecom AI & Integration",
+    items: ["Telecommunications data integration", "Model Context Protocol (MCP)", "Enterprise APIs", "AI agent workflows", "Azure Cosmos DB", "Azure Application Insights", "GPU / PTU optimization"],
+  },
+  {
     title: "Programming Languages",
     items: ["Python", "SQL", "R", "C++", "Java", "JavaScript"],
   },
